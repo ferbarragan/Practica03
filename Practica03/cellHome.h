@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  cellHome.h
 //  Practica03
 //
 //  Created by Christian Barragan on 25/06/16.
@@ -7,10 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "cellHome.h"
 
-@interface Home : UIViewController
-
+@interface cellHome : UITableViewCell
 
 @end
-

@@ -14,6 +14,8 @@
 		AA2B9A051D1EE049005A4E3F /* Practica03.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA2B9A031D1EE049005A4E3F /* Practica03.xcdatamodeld */; };
 		AA2B9A071D1EE049005A4E3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA2B9A061D1EE049005A4E3F /* Assets.xcassets */; };
 		AA2B9A0A1D1EE049005A4E3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA2B9A081D1EE049005A4E3F /* LaunchScreen.storyboard */; };
+		AA2B9A181D1EE45F005A4E3F /* cellHome.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2B9A161D1EE45F005A4E3F /* cellHome.m */; };
+		AA2B9A191D1EE45F005A4E3F /* cellHome.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA2B9A171D1EE45F005A4E3F /* cellHome.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,9 @@
 		AA2B9A061D1EE049005A4E3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA2B9A091D1EE049005A4E3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA2B9A0B1D1EE049005A4E3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA2B9A151D1EE45F005A4E3F /* cellHome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cellHome.h; sourceTree = "<group>"; };
+		AA2B9A161D1EE45F005A4E3F /* cellHome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cellHome.m; sourceTree = "<group>"; };
+		AA2B9A171D1EE45F005A4E3F /* cellHome.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = cellHome.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +65,7 @@
 		AA2B99F61D1EE049005A4E3F /* Practica03 */ = {
 			isa = PBXGroup;
 			children = (
+				AA2B9A131D1EE431005A4E3F /* Cells */,
 				AA2B9A121D1EE05E005A4E3F /* Main */,
 				AA2B9A111D1EE058005A4E3F /* Controllers */,
 				AA2B9A001D1EE049005A4E3F /* Main.storyboard */,
@@ -96,6 +102,16 @@
 				AA2B99FB1D1EE049005A4E3F /* AppDelegate.m */,
 			);
 			name = Main;
+			sourceTree = "<group>";
+		};
+		AA2B9A131D1EE431005A4E3F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				AA2B9A151D1EE45F005A4E3F /* cellHome.h */,
+				AA2B9A161D1EE45F005A4E3F /* cellHome.m */,
+				AA2B9A171D1EE45F005A4E3F /* cellHome.xib */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +173,7 @@
 			files = (
 				AA2B9A0A1D1EE049005A4E3F /* LaunchScreen.storyboard in Resources */,
 				AA2B9A071D1EE049005A4E3F /* Assets.xcassets in Resources */,
+				AA2B9A191D1EE45F005A4E3F /* cellHome.xib in Resources */,
 				AA2B9A021D1EE049005A4E3F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,6 +188,7 @@
 				AA2B99FF1D1EE049005A4E3F /* Home.m in Sources */,
 				AA2B9A051D1EE049005A4E3F /* Practica03.xcdatamodeld in Sources */,
 				AA2B99FC1D1EE049005A4E3F /* AppDelegate.m in Sources */,
+				AA2B9A181D1EE45F005A4E3F /* cellHome.m in Sources */,
 				AA2B99F91D1EE049005A4E3F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
