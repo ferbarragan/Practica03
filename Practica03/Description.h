@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Declarations.h"
 
 @interface Description : UIViewController
+
+@property NSInteger MunicIndex;
+@property NSInteger StateIndex;
+
+@property (strong, nonatomic) IBOutlet UIImageView *imgDesc;
+@property (strong, nonatomic) IBOutlet UILabel *lblDescTitle;
+@property (strong, nonatomic) IBOutlet UILabel *lblDesc;
 
 @end

@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Declarations.h"
+#import "cellHome.h"
+#import "Description.h"
 
 @interface Municipios : UIViewController
+
+@property NSInteger StateIndex;
 
 @end

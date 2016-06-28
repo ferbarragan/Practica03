@@ -10,14 +10,12 @@
 
 @interface Home ()
 
-@property NSMutableArray *stateTitle;
-@property NSMutableArray *stateDescription;
-@property NSMutableArray *stateImgs;
-
+@property NSInteger StateIndex;
 
 @end
 
 @implementation Home
+
 /**********************************************************************************************/
 #pragma mark - Initialization methods
 /**********************************************************************************************/
@@ -32,28 +30,7 @@
 }
 //-------------------------------------------------------------------------------
 - (void)initController {
-    
-    self.stateTitle = [[NSMutableArray alloc] initWithObjects:
-                      @"Chiapas",
-                      @"Estado de México",
-                      @"Jalisco",
-                      @"Sonora",
-                      @"Yucatán",
-                      nil];
-    self.stateImgs = [[NSMutableArray alloc] initWithObjects:
-                       @"chiapas_main.jpg",
-                       @"edoMexico_main.jpg",
-                       @"jalisco_main.jpg",
-                       @"sonora_main.jpg",
-                       @"yucatan_main.jpg",
-                       nil];
-    self.stateDescription = [[NSMutableArray alloc] initWithObjects:
-                       @"Se encuentra en el extremo sureste del país, en la frontera con Guatemala.",
-                       @"Es uno de los estados fundadores de la federación, y el de mayor densidad de población.",
-                       @"Es la tierra de los charros, jaripeos, mariachi y el tequila.",
-                       @"Es conocido por sus características desérticas, su clima caluroso y sus playas.",
-                       @"Lugar de hermosas playas, cenotes y ruinas mayas.",
-                       nil];
+    self.StateIndex = 0;
 
 }
 
@@ -65,7 +42,7 @@
 }
 //-------------------------------------------------------------------------------
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.stateTitle.count;
+    return MAX_STATES;
 }
 //-------------------------------------------------------------------------------
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -80,25 +57,29 @@
         [tableView registerNib:[UINib nibWithNibName:@"cellHome" bundle:nil] forCellReuseIdentifier:@"cellHome"];
         cell = [tableView dequeueReusableCellWithIdentifier:@"cellHome"];
     }
-    //Fill cell with info from arrays
-    cell.lblTitle.text = self.stateTitle[indexPath.row];
-    cell.lblDesc.text = self.stateDescription[indexPath.row];
-    cell.imgCell.image = [UIImage imageNamed:self.stateImgs[indexPath.row]];
     
+    /* Fill cell with info from arrays */
+    cell.lblTitle.text = [NSString stringWithUTF8String:stStates[indexPath.row].Name];
+    cell.lblDesc.text = [NSString stringWithUTF8String:stStates[indexPath.row].Desc];
+    cell.imgCell.image = [UIImage imageNamed:[NSString stringWithUTF8String:stStates[indexPath.row].imgPath]];
     
     return cell;
 }
 //-------------------------------------------------------------------------------
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.StateIndex = indexPath.row;
     [self performSegueWithIdentifier:@"StateToMunic" sender:self];
-
 }
 
 /**********************************************************************************************/
-#pragma mark - Table methods and delegates
+#pragma mark - Segue methods
 /**********************************************************************************************/
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
+    if ([segue.destinationViewController isKindOfClass:[Municipios class]])
+    {
+        Municipios *municObj = [segue destinationViewController];
+        municObj.StateIndex = self.StateIndex;
+    }
 }
 
 @end

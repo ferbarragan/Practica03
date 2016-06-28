@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Declarations.h"
 #import "cellHome.h"
 #import "Municipios.h"
+
 
 @interface Home : UIViewController
 
